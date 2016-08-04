@@ -1,0 +1,712 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Cordova Plugin for CodePush中文手册通过集成codepush服务的客户端plugin，可以让你的cordova app 轻松获得动态部署体验。
+
+它是如何工作的?
+对Cordova平台支持
+入门
+插件使用
+发布更新
+参考api
+PhoneGap构建
+Apps 实例
+
+它是如何工作的?cordova APP，是由cordova 命令行打包HTML、CSS、JavaScrip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cordova Plugin for CodePush中文手册">
+<meta property="og:url" content="http://yoursite.com/2016/08/04/Cordova-Plugin-for-CodePush中文手册/index.html">
+<meta property="og:site_name" content="K">
+<meta property="og:description" content="Cordova Plugin for CodePush中文手册通过集成codepush服务的客户端plugin，可以让你的cordova app 轻松获得动态部署体验。
+
+它是如何工作的?
+对Cordova平台支持
+入门
+插件使用
+发布更新
+参考api
+PhoneGap构建
+Apps 实例
+
+它是如何工作的?cordova APP，是由cordova 命令行打包HTML、CSS、JavaScrip">
+<meta property="og:updated_time" content="2016-08-04T07:20:41.659Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cordova Plugin for CodePush中文手册">
+<meta name="twitter:description" content="Cordova Plugin for CodePush中文手册通过集成codepush服务的客户端plugin，可以让你的cordova app 轻松获得动态部署体验。
+
+它是如何工作的?
+对Cordova平台支持
+入门
+插件使用
+发布更新
+参考api
+PhoneGap构建
+Apps 实例
+
+它是如何工作的?cordova APP，是由cordova 命令行打包HTML、CSS、JavaScrip">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/04/Cordova-Plugin-for-CodePush中文手册/"/>
+
+  <title> Cordova Plugin for CodePush中文手册 | K </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">K</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">binbin blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Cordova Plugin for CodePush中文手册
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-04T15:15:40+08:00" content="2016-08-04">
+              2016-08-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Cordova-Plugin-for-CodePush中文手册"><a href="#Cordova-Plugin-for-CodePush中文手册" class="headerlink" title="Cordova Plugin for CodePush中文手册"></a>Cordova Plugin for CodePush中文手册</h1><p>通过集成codepush服务的客户端plugin，可以让你的cordova app 轻松获得动态部署体验。</p>
+<ul>
+<li><a href="#它是如何工作的">它是如何工作的?</a></li>
+<li><a href="#对Cordova平台支持">对Cordova平台支持</a></li>
+<li><a href="#入门">入门</a></li>
+<li><a href="#插件使用">插件使用</a></li>
+<li><a href="#发布更新">发布更新</a></li>
+<li><a href="#参考api">参考api</a></li>
+<li><a href="#phonegap-build">PhoneGap构建</a></li>
+<li><a href="#example-apps">Apps 实例</a></li>
+</ul>
+<h2 id="它是如何工作的"><a href="#它是如何工作的" class="headerlink" title="它是如何工作的?"></a>它是如何工作的?</h2><p>cordova APP，是由cordova 命令行打包HTML、CSS、JavaScript和所有的图片，使之成为二进制文件（即.ipa或.apk文件）的一部分。一旦APP发布，再次修改代码（修改bug，或者添加新的功能）或者更新图像资源，需要重新编译和发布这个二进制文件，当然还会花费发布到应用商店的审核时间。<br><a id="more"></a><br>CodePush 插件通过保持你发布到codepush服务器上的代码和图片资源的同步更新，帮助你的改善的产品立即呈现在终端用户前。通过这种方式，你的应用程序不仅可以得到离线移动体验的好处，而且拥有一有更新就会加载的网络式体验。这是双赢。</p>
+<p>为了保证你的终端用户的APP总有可以运行的版本，Codepush插件会维护一份以前的版本更新，以便当你提交一个不可用的更新后，它能自动回滚。通过这种方式，可以放心，在服务器上做版本回滚之前，新的更新不会对用户造成阻碍。这是三赢。</p>
+<p><em>注意：涉及原始代码的改动（例如：cordova版本升级，添加新的插件），不能通过codepush插件更新，因此，这类情况需要更新应用商店。</em></p>
+<h2 id="对Cordova平台支持"><a href="#对Cordova平台支持" class="headerlink" title="对Cordova平台支持"></a>对Cordova平台支持</h2><p>完全支持Cordova5.0.0+，同时支持以下的平台：</p>
+<ul>
+<li>Android (<a href="https://github.com/apache/cordova-android" target="_blank" rel="external">cordova-android</a> 4.0.0+) - <em>包括 CrossWalk!</em> </li>
+<li>iOS (<a href="https://github.com/apache/cordova-ios" target="_blank" rel="external">cordova-ios</a> 3.9.0+) - <em>注意: 为了让 CodePush 和 <a href="https://github.com/apache/cordova-plugin-wkwebview-engine" target="_blank" rel="external"><code>cordova-plugin-wkwebview-engine</code></a> plugin 一起使用, 你需要安装完全支持应用程序的 <code>v1.5.1-beta+</code> 版本的 WebView。</em></li>
+</ul>
+<p>检查你当前使用哪个版本的Cordova平台，你可以运行以下命令行，检查<code>Installed platforms</code> 列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cordova platform ls</div></pre></td></tr></table></figure>
+<p>如果你现在在使用比上面支持版本低的Android或IOS平台，并且愿意进行升级，你可以运行以下命令轻松实现升级。（如果用不着某平台，则不用升级）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cordova platform update android</div><div class="line">cordova platform update ios</div></pre></td></tr></table></figure>
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p>一旦你跟随通用的 <a href="http://microsoft.github.io/code-push//docs/getting-started.html" target="_blank" rel="external">“入门指南”</a>中的指令，设置了Codepush账户，你可以在你的项目的根目录运行以下的指令，对你的 Cordova 应用 “Codepush化” 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cordova plugin add cordova-plugin-code-push@latest</div></pre></td></tr></table></figure>
+<p>成功安装Codepush插件后，通过以下步骤配置你的应用程序：</p>
+<ol>
+<li><p>在 <code>config.xml</code> 文件中添加 deployment keys，确保每个Cordova程序都有各自正确的KEY：</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">platform</span> <span class="attr">name</span>=<span class="string">"android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">preference</span> <span class="attr">name</span>=<span class="string">"CodePushDeploymentKey"</span> <span class="attr">value</span>=<span class="string">"YOUR-ANDROID-DEPLOYMENT-KEY"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">platform</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">platform</span> <span class="attr">name</span>=<span class="string">"ios"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">preference</span> <span class="attr">name</span>=<span class="string">"CodePushDeploymentKey"</span> <span class="attr">value</span>=<span class="string">"YOUR-IOS-DEPLOYMENT-KEY"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">platform</span>&gt;</span></div></pre></td></tr></table></figure>
+<p> 在此提醒，这些Key是你通过 CLI（命令行）创建CodePush APP时生成的，如果你需要再次查看它们，你可以简单的运行 <code>code-push deployment ls APP_NAME -k</code> 命令，获取你想使用的具体的deployment Key（例如：<code>Staging</code>, <code>Production</code>）。</p>
+<p> <em>注意：我们 <a href="http://microsoft.github.io/code-push/docs/cli.html#link-4" target="_blank" rel="external">推荐</a> 为 Android 和 IOS 应用程序创建单独的 CodePush app, 这也是为什么在上面的示例中对 Android 和 IOS 的Deployment Key进行单独的说明。如果你针对于单一的平台进行开发，你只需要指定属于 Android 或 IOS 的Deployment key即可。如上面所说，你不需要额外添加 <code>&lt;platform&gt;</code> 元素进行说明。</em> </p>
+</li>
+<li><p>如果你的 <code>config.xml</code> 文件中使用了 <code>&lt;access origin=&quot;*&quot; /&gt;</code> 元素，那么你的应用程序已经可以与 CodePush 服务器进行通信，你可以跳过此步骤。否则，在<code>config.xml</code> 文件中添加以下 <code>&lt;access /&gt;</code> 元素：</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">access</span> <span class="attr">origin</span>=<span class="string">"https://codepush.azurewebsites.net"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">access</span> <span class="attr">origin</span>=<span class="string">"https://codepush.blob.core.windows.net"</span> /&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>为确保你的应用程序通过<a href="https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy" target="_blank" rel="external">CSP</a>连接CodePush服务器,需要在你的<code>index.html</code>文件的<code>Content-Security-Policy</code> <code>meta</code> 标签中添加 <code>https://codepush.azurewebsites.net</code>：</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span> <span class="attr">content</span>=<span class="string">"default-src https://codepush.azurewebsites.net 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"</span> /&gt;</span></div><div class="line">    ``` </div><div class="line"></div><div class="line">4. 最后，仔细检查你是否已经安装[`cordova-plugin-whitelist`](https://github.com/apache/cordova-plugin-whitelist) 插件（大多数应用程序需要），运行以下命令，进行检查：</div><div class="line"></div><div class="line">    ```shell</div><div class="line">    cordova plugin ls</div></pre></td></tr></table></figure>
+<p> 如果列表中存在 <code>cordova-plugin-whitelist</code>，你可以进行一下步。否则，执行下面的命令进行添加：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cordova plugin add cordova-plugin-whitelist</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>你现在已经准备在意的应用程序代码中使用这个plugin,可以<a href="/samples">参照示例</a> 程序和API文档，了解更多细节。</p>
+<h2 id="插件使用"><a href="#插件使用" class="headerlink" title="插件使用"></a>插件使用</h2><p>随着 CodePush 插件的安装和配置，剩下的唯一的事情是，在你的应用程序中添加必要的代码，来控制一下的策略：</p>
+<ol>
+<li><p>何时（频率）检查更新？（例如：启动应用程序时；在设置页面点击一下按钮；或是一定的时间间隔）</p>
+</li>
+<li><p>当有可用的更新时，怎样展现给终端用户？</p>
+</li>
+</ol>
+<p>最简单的方法是，在 你的应用程序的 <code>deviceready</code> 准备事件中添加以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">codePush.sync();</div></pre></td></tr></table></figure>
+<p>如果有一个可用更新，他将在后台默默下载，在下一次APP启动时，进行安装（无论是终端用户，还是操作系统）。这保证对终端用户造成最少的侵入式体验。如果这个更新是强制性的，为确保终端用户尽快得到它，会执行立即更新。</p>
+<p>如果你希望你的程序更快的发现更新，可以在你的启动执行的行为中，添加以下的代码（或是等效的其他代码），让在App每次启动的时候都调用 <code>sync</code> 。只要你想，你可以尽可能多的调用 <code>sync</code>，可以根据个人喜好，无论什么时候，在哪里，都可以调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"resume"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    codePush.sync();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>此外，如果你想显示一个更新的对确认对话框（“主动更新”），对一个可用的更新进行安装设置（例如：强行立即重启）或自定义各种更新体验。你可以阅读  <code>sync</code> 方法的 API参考信息，查看如何调用它们的预设行为。</p>
+<p><em>注意：虽然 <a href="https://developer.apple.com/programs/ios/information/iOS_Program_Information_4_3_15.pdf" target="_blank" rel="external">苹果开发者协议</a> 完全同意无线更新JavaScript和资源文件（CodePush能使用的原因！），但是，它们反对应用程序显示更新提示。我们建议通过app-store下载的应用程序，在调用 <code>sync</code> 时，不要使用更新提示框，而通过Google Play或其他内部的应用程序（例如：企业，Fabric, HockeyApp）可以使用，并且可以进行自定义。</em></p>
+<h2 id="发布更新"><a href="#发布更新" class="headerlink" title="发布更新"></a>发布更新</h2><p>一旦，你完成设置的app被你的用户安装，并且你已经修改了代码和资源，这时候，你就可以立即发布它！最简单的（也是我们推荐的）方法是在CodePush命令行界面，使用 <code>release-cordova</code> 命令，将的更新处理并发布到Codepush服务器。</p>
+<p>这个命令的最基本的形式只有两个参数：你的程序的名字和执行此次更新的平台（IOS或者Android）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">code-push release-cordova &lt;appName&gt; &lt;platform&gt;</div><div class="line"></div><div class="line">code-push release-cordova MyApp-ios ios</div><div class="line">code-push release-cordova MyApp-Android android</div></pre></td></tr></table></figure>
+<p><em>注意：当CodePush发布更新时，你不需要更新app的config.xml中的版本号，因为你根本没有修改应用商店里的app的版本。只有当你升级Cordova或者plugin时，修改应用程序的版本，然后重新在应用商店里发布。为了帮助你标注发布历史，CodePush会生成一个标签，来标记每次发布的版本（例如：V3）。</em></p>
+<p>由于知道Cordova程序的标准布局结构， <code>release-cordova</code> 命令可以构成一个简单的工作流程，生成更新，并且确切的知道那些文件需要上传。此外，为了灵活的支持个更新策略，<code>release-cordova</code> 命令提供许多可选的参数。可以定制怎样把更新展现给终端用户。（例如：哪个版本兼容此次更新？此次更新时强制性的吗？）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># 发布一个强制执行的更新，并计入更新日志</div><div class="line">code-push release-cordova MyApp-ios ios -m --description &quot;Modified the header color&quot;</div><div class="line"></div><div class="line"># 发布一个开发版的Android版本，更新1/4的终端用户</div><div class="line">code-push release-cordova MyApp-Android android --rollout 25%</div><div class="line"></div><div class="line"># 发布一个更新，针对应用程序的版本为 1.1.* 的任何终端用户，而不仅仅</div><div class="line"># 是config.xml中限制的固定的版本号用户</div><div class="line">code-push release-cordova MyApp-Android android --targetBinaryVersion &quot;~1.1.0&quot;</div><div class="line"></div><div class="line"># 发布一个更新，并标志为禁用</div><div class="line"># 因此没有用户可以下载此次更新</div><div class="line">code-push release-cordova MyApp-ios ios -x</div></pre></td></tr></table></figure>
+<p>CodePush的客户端支持查分更新，即使你每次更新逗发布你的程序代码，你的终端用户实际上只会下载它们需要的文件。这个服务是自动的，你只需要专注于开发应程序，我们会给你分担终端用户的下载优化。</p>
+<p>关于 <code>release-cordova</code> 是如果工作的细节，以及他提供的各种参数，请参考<a href="https://github.com/Microsoft/code-push/tree/master/cli#releasing-updates-cordova" target="_blank" rel="external">CLI 文档</a>。另外，如果你更愿意执行 <code>cordova prepare</code> 命令，因而，想要一个比 <code>release-cordova</code> 更好的解决方案，可以参考 <a href="https://github.com/Microsoft/code-push/tree/master/cli#releasing-updates-general" target="_blank" rel="external"><code>release</code> 命令</a>，获得更多细节。</p>
+<p>如果你遇到任何问题，或者有任何 问题、意见、反馈，你可以给我们发送<a href="mailto:codepushfeed@microsoft.com" target="_blank" rel="external">邮件</a>,或者在这个回复区打开一个问题，我们会尽快回复。</p>
+<h2 id="参考api"><a href="#参考api" class="headerlink" title="参考api"></a>参考api</h2><p>在 <code>deviceready</code> 事件触发后，通过全局的 CodePush 对象暴露在你的程序中的CodePush API可以被使用，以下为公开的API顶层的方法：</p>
+<ul>
+<li><p><strong><a href="#codepushcheckforupdate">checkForUpdate</a></strong>: 检查CodePush服务器，这个已配置的APP部署程序，是否有可用的更新。</p>
+</li>
+<li><p><strong><a href="#codepushgetcurrentpackage">getCurrentPackage</a></strong>: 检索当前安装的更新的元数据（例如：描述、安装时间、大小）。</p>
+</li>
+<li><p><strong><a href="#codepushgetpendingpackage">getPendingPackage</a></strong>: 检索已经下载并安装，但还没有通过重启进行应用的更新的元数据。（如果有的话）</p>
+</li>
+<li><p><strong><a href="#codepushnotifyapplicationready">notifyApplicationReady</a></strong>: Notifies the CodePush runtime that an installed update is considered successful. If you are manually checking for and installing updates (i.e. not using the sync method to handle it all for you), then this method <strong>MUST</strong> be called; otherwise CodePush will treat the update as failed and rollback to the previous version when the app next restarts.</p>
+</li>
+<li><p><strong><a href="#codepushrestartapplication">restartApplication</a></strong>: Immediately restarts the app. If there is an update pending, it will be immediately displayed to the end user.</p>
+</li>
+<li><p><strong><a href="#codepushsync">sync</a></strong>: Allows checking for an update, downloading it and installing it, all with a single call. Unless you need custom UI and/or behavior, we recommend most developers to use this method when integrating CodePush into their apps.</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/04/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Conper" />
+          <p class="site-author-name" itemprop="name">Conper</p>
+          <p class="site-description motion-element" itemprop="description">Write less, do more</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/binbinyouli27" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Cordova-Plugin-for-CodePush中文手册"><span class="nav-number">1.</span> <span class="nav-text">Cordova Plugin for CodePush中文手册</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#它是如何工作的"><span class="nav-number">1.1.</span> <span class="nav-text">它是如何工作的?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对Cordova平台支持"><span class="nav-number">1.2.</span> <span class="nav-text">对Cordova平台支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门"><span class="nav-number">1.3.</span> <span class="nav-text">入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件使用"><span class="nav-number">1.4.</span> <span class="nav-text">插件使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布更新"><span class="nav-number">1.5.</span> <span class="nav-text">发布更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考api"><span class="nav-number">1.6.</span> <span class="nav-text">参考api</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Conper</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
